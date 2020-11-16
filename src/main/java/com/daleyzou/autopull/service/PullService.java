@@ -49,11 +49,13 @@ public class PullService {
 
     @Async
     public void gitlabIflowHook(String postData) throws IOException {
+        log.info(postData);
         ShellUtil.executeShell("sh /data/icode_3_0_0_code/deploy.sh'", 0, "");
     }
 
     @Async
     public void gitlabIflowfeHook(String postData) throws IOException {
+        log.info(postData);
         ShellUtil.executeShell("sh /data/icode_3_0_0_code/deploy-fe.sh", 0, "");
     }
 }
