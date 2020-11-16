@@ -43,7 +43,7 @@ public class PullController {
 
     @GetMapping({"/code/pull"})
     public RsVo pullCode(@RequestParam(defaultValue = "") String location, @RequestParam(defaultValue = "") String userName, @RequestParam(defaultValue = "") String password, @RequestParam(defaultValue = "") String type) throws IOException {
-        if (StringUtils.isEmpty(location) || !"lijuan".equals(userName) || !"lijuanAutoPull".equals(password)) {
+        if (StringUtils.isEmpty(location) || !USER_NAME.equals(userName) || !PASSWORD.equals(password)) {
             return RsVo.fail("param is illegal");
         }
                     List<String> locations = RELEASES_SPLITTER.splitToList(location);
